@@ -47,14 +47,24 @@ Remarkably similar to behavior trees
 
 Consists of a single root-level node and child nodes.
 
-### Composite Nodes
-* __markov__: Execute the first child that has a match
-*  __sequence__: Execute the first child that matches, but don't run children that have already completed
-*  __all__: Every rule should find all matches and do the replacement, if there are multiple matches for the same position, then it can use `field`s to bias the result
+The root level node (whatever it is), can have two attributes:
+* `origin`: `Random`, `Center`, or none
+* `symmetry`
 
-### Action Nodes
-* __one__: find a single match and do the replacement. if steps is defined, it will terminate the action
-* __all__: find all matches and do the replacement.
-* __prl__:
-* 
+### Node Types
+
+#### Composites (Branches)
+* `markov`: Execute the first child that has a match
+* `sequence`: Execute the first child that matches, but don't run children that have already 
+
+#### Actions
+* `one`: find a single match and do the replacement. if steps is defined, it will terminate the action
+*  `all`: Every rule should find all matches and do the replacement, if there are multiple matches for the same position, then it can use `field`s to bias the result
+* `prl`
+completed
+* `path`
+* `map`
+* `convolution`
+* `convchain`
+* `wfc`
 
